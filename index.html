@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrueCred - Academic Authenticity Validator</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- GSAP & Locomotive Scroll -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.css">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div data-scroll-container>
+        <!-- Navigation -->
+        <nav class="navbar" data-scroll data-scroll-sticky data-scroll-target="#scroll-container">
+            <div class="nav-container">
+                <div class="logo" data-scroll data-scroll-speed="1">
+                    <div class="logo-icon">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <rect width="32" height="32" rx="8" fill="url(#gradient)"/>
+                            <path d="M16 8L22 12V20L16 24L10 20V12L16 8Z" stroke="white" stroke-width="2" fill="none"/>
+                            <defs>
+                                <linearGradient id="gradient" x1="0" y1="0" x2="1" y2="1">
+                                    <stop offset="0%" style="stop-color:#667eea"/>
+                                    <stop offset="100%" style="stop-color:#764ba2"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <span>TrueCred</span>
+                </div>
+                
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link" data-scroll data-scroll-speed="0.5">Home</a></li>
+                    <li><a href="#verify" class="nav-link" data-scroll data-scroll-speed="0.5">Verify</a></li>
+                    <li><a href="#features" class="nav-link" data-scroll data-scroll-speed="0.5">Features</a></li>
+                    <li><a href="#about" class="nav-link" data-scroll data-scroll-speed="0.5">About</a></li>
+                </ul>
+                
+                <div class="nav-actions">
+                    <button class="btn-secondary" onclick="window.location.href='login.html'">Login</button>
+                    <button class="btn-primary" onclick="window.location.href='verify-certificate.html'">Verify Now</button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="hero-section" id="home" data-scroll-section>
+            <div class="hero-background" data-scroll data-scroll-speed="-4">
+                <div class="hero-gradient"></div>
+                <div class="hero-pattern"></div>
+            </div>
+            
+            <div class="hero-container">
+                <div class="hero-content" data-scroll data-scroll-speed="2">
+                    <div class="hero-badge" data-scroll data-scroll-delay="0.1">
+                        <span>🚀 AI-Powered Verification</span>
+                    </div>
+                    
+                    <h1 class="hero-title" data-scroll data-scroll-delay="0.2">
+                        Become Part of Something 
+                        <span class="highlight">Bigger</span> in 
+                        <span class="highlight-secondary">Academic</span> 
+                        Verification
+                    </h1>
+                    
+                    <p class="hero-description" data-scroll data-scroll-delay="0.3">
+                        Discover the power of authentic academic credentials with TrueCred, 
+                        where you'll find trust, security, and purpose in every verification.
+                    </p>
+                    
+                    <div class="hero-stats" data-scroll data-scroll-delay="0.4">
+                        <div class="stat-card">
+                            <div class="stat-number" data-target="50">0</div>
+                            <div class="stat-unit">M+</div>
+                            <div class="stat-label">Certificates Verified</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" data-target="95">0</div>
+                            <div class="stat-unit">%</div>
+                            <div class="stat-label">AI Accuracy Rate</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" data-target="500">0</div>
+                            <div class="stat-unit">+</div>
+                            <div class="stat-label">Universities Connected</div>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-actions" data-scroll data-scroll-delay="0.5">
+                        <button class="btn-primary-large" onclick="window.location.href='verify-certificate.html'">
+                            <span>Verify Certificate</span>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M10.293 3.293a1 1 0 0 1 1.414 0l6 6a1 1 0 0 1 0 1.414l-6 6a1 1 0 0 1-1.414-1.414L14.586 11H3a1 1 0 1 1 0-2h11.586l-4.293-4.293a1 1 0 0 1 0-1.414z"/>
+                            </svg>
+                        </button>
+                        <button class="btn-secondary-large" onclick="playDemo()">
+                            <span>Watch Demo</span>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M6.3 2.841A1.5 1.5 0 0 0 4 4.11v11.78a1.5 1.5 0 0 0 2.3 1.269l9.344-5.89a1.5 1.5 0 0 0 0-2.538L6.3 2.84z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="hero-visual" data-scroll data-scroll-speed="1">
+                    <div class="hero-image">
+                        <div class="floating-card card-1" data-scroll data-scroll-speed="3">
+                            <div class="card-icon">🎓</div>
+                            <div class="card-title">Institution Portal</div>
+                            <div class="card-status">Active</div>
+                        </div>
+                        <div class="floating-card card-2" data-scroll data-scroll-speed="-2">
+                            <div class="card-icon">🔍</div>
+                            <div class="card-title">AI Verification</div>
+                            <div class="card-status">Processing</div>
+                        </div>
+                        <div class="floating-card card-3" data-scroll data-scroll-speed="2">
+                            <div class="card-icon">✅</div>
+                            <div class="card-title">Verified</div>
+                            <div class="card-status">Complete</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Verification Process Section -->
+        <section class="process-section" data-scroll-section>
+            <div class="container">
+                <div class="section-header" data-scroll data-scroll-speed="1">
+                    <h2 class="section-title">How TrueCred Works</h2>
+                    <p class="section-subtitle">Four simple steps to verify any academic credential</p>
+                </div>
+                
+                <div class="process-grid">
+                    <div class="process-card" data-scroll data-scroll-delay="0.1">
+                        <div class="process-number">01</div>
+                        <div class="process-icon">📤</div>
+                        <h3>Upload Certificate</h3>
+                        <p>Simple drag-and-drop upload for both digital and scanned certificates</p>
+                        <div class="process-arrow">→</div>
+                    </div>
+                    
+                    <div class="process-card" data-scroll data-scroll-delay="0.2">
+                        <div class="process-number">02</div>
+                        <div class="process-icon">🤖</div>
+                        <h3>AI Analysis</h3>
+                        <p>Advanced OCR and machine learning algorithms detect anomalies and forgeries</p>
+                        <div class="process-arrow">→</div>
+                    </div>
+                    
+                    <div class="process-card" data-scroll data-scroll-delay="0.3">
+                        <div class="process-number">03</div>
+                        <div class="process-icon">🔗</div>
+                        <h3>Blockchain Verification</h3>
+                        <p>Cross-reference with tamper-proof institutional records</p>
+                        <div class="process-arrow">→</div>
+                    </div>
+                    
+                    <div class="process-card" data-scroll data-scroll-delay="0.4">
+                        <div class="process-number">04</div>
+                        <div class="process-icon">✅</div>
+                        <h3>Instant Results</h3>
+                        <p>Get verification status within seconds with detailed authenticity report</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features-section" id="features" data-scroll-section>
+            <div class="container">
+                <div class="features-content">
+                    <div class="features-text" data-scroll data-scroll-speed="2">
+                        <h2 class="section-title">Catch Performance While You're Verifying</h2>
+                        <div class="features-grid">
+                            <div class="feature-card">
+                                <div class="feature-icon">🧠</div>
+                                <h3>TensorFlow AI Detection</h3>
+                                <p>Advanced anomaly detection identifies sophisticated forgeries with 99.5% accuracy</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">📋</div>
+                                <h3>Tesseract OCR</h3>
+                                <p>Extracts and analyzes text from any certificate format with precision</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">⛓️</div>
+                                <h3>Blockchain Registry</h3>
+                                <p>Immutable record storage ensures tamper-proof verification history</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">⚡</div>
+                                <h3>Real-time API</h3>
+                                <p>Integration-ready FastAPI endpoints for instant verification</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="features-visual" data-scroll data-scroll-speed="-1">
+                        <div class="feature-showcase">
+                            <div class="showcase-item" data-scroll data-scroll-speed="2">
+                                <div class="showcase-number">98.8%</div>
+                                <div class="showcase-label">Graduate employment rate</div>
+                            </div>
+                            <div class="showcase-item" data-scroll data-scroll-speed="-1">
+                                <div class="showcase-number">6th</div>
+                                <div class="showcase-label">Best verification platform</div>
+                            </div>
+                            <div class="showcase-item" data-scroll data-scroll-speed="1.5">
+                                <div class="showcase-number">50+</div>
+                                <div class="showcase-label">Integration partners</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust Section -->
+        <section class="trust-section" data-scroll-section>
+            <div class="container">
+                <h2 class="section-title" data-scroll data-scroll-speed="1">Trusted by Leading Institutions</h2>
+                <div class="trust-stats">
+                    <div class="trust-item" data-scroll data-scroll-delay="0.1">
+                        <span class="trust-number" data-target="500">0</span>
+                        <span class="trust-label">Universities Connected</span>
+                    </div>
+                    <div class="trust-item" data-scroll data-scroll-delay="0.2">
+                        <span class="trust-number" data-target="10000">0</span>
+                        <span class="trust-label">Employers Using</span>
+                    </div>
+                    <div class="trust-item" data-scroll data-scroll-delay="0.3">
+                        <span class="trust-number">Zero</span>
+                        <span class="trust-label">False Positives</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section" data-scroll-section>
+            <div class="container">
+                <div class="cta-content" data-scroll data-scroll-speed="1">
+                    <h2>Ready to Eliminate Academic Fraud?</h2>
+                    <p>Join thousands of institutions and employers using TrueCred for instant, secure certificate verification.</p>
+                    <div class="cta-actions">
+                        <button class="btn-primary-large" onclick="window.location.href='verify-certificate.html'">Start Free Trial</button>
+                        <button class="btn-secondary-large" onclick="scheduleDemo()">Schedule Demo</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer" data-scroll-section>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-brand">
+                        <div class="logo">TrueCred</div>
+                        <p>AI-powered academic credential verification for a fraud-free education system.</p>
+                    </div>
+                    <div class="footer-links">
+                        <div class="footer-section">
+                            <h4>Product</h4>
+                            <ul>
+                                <li><a href="#">Features</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-section">
+                            <h4>Solutions</h4>
+                            <ul>
+                                <li><a href="#">For Universities</a></li>
+                                <li><a href="#">For Employers</a></li>
+                                <li><a href="#">Government</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-section">
+                            <h4>Support</h4>
+                            <ul>
+                                <li><a href="#">Help Center</a></li>
+                                <li><a href="#">Contact</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
